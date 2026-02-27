@@ -11,4 +11,4 @@ What I did:
 
 Tech Stack: Python, XGBoost, Scikit-learn, Pandas, Plotly, Streamlit
 
-System Demo(https://house-price-predictorcalifornia-hjggnxkk6juzla9ae5hbwz.streamlit.app/)
+System Demo :https://house-price-predictorcalifornia-hjggnxkk6juzla9ae5hbwz.streamlit.app/
