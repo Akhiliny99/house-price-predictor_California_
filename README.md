@@ -31,32 +31,38 @@ WHAT I DID — STEP BY STEP
 
 PHASE 1: Exploratory Data Analysis (EDA)
 - Analyzed distributions of all 9 features using histograms
-- Created a correlation heatmap — found MedInc has the 
-  strongest correlation with house price (r=0.69)
-- Built a geographic price map showing coastal areas 
-  are significantly more expensive than inland areas
-- Discovered the target variable is capped at $500K 
-  (houses above this were recorded as $500K)
-- Identified 207 outlier values in AveRooms, AveOccup, 
-  and Population using the 99th percentile threshold
+  
+- Created a correlation heatmap — found MedInc has the strongest correlation with house price (r=0.69)
+  
+- Built a geographic price map showing coastal areas are significantly more expensive than inland areas
+  
+- Discovered the target variable is capped at $500K (houses above this were recorded as $500K)
+  
+- Identified 207 outlier values in AveRooms, AveOccup, and Population using the 99th percentile threshold
 
 PHASE 2: Feature Engineering
 - Created 4 new features from domain knowledge:
   → rooms_per_person   = AveRooms / AveOccup
     (actual living space quality, not just room count)
+  
   → bedroom_ratio      = AveBedrms / AveRooms
     (proportion of rooms that are bedrooms)
+  
   → income_per_room    = MedInc / AveRooms
     (wealth relative to property size)
+  
   → dist_min_city      = minimum distance to SF or LA
     (proximity to major economic centres)
-- Applied Winsorization at 99th percentile to cap outliers
-  (preserves data rather than deleting rows)
+  
+- Applied Winsorization at 99th percentile to cap outliers (preserves data rather than deleting rows)
+  
 - Used 80/20 stratified train/test split (random_state=42)
+  
 - Fitted StandardScaler ONLY on training data to prevent 
   data leakage
 
 PHASE 3: Model Training & Evaluation
+
 - Trained and compared 6 machine learning models:
   Model               | R²     | RMSE   | MAE
   Linear Regression   | 0.606  | 0.718  | 0.528
@@ -66,15 +72,14 @@ PHASE 3: Model Training & Evaluation
   XGBoost             | 0.852  | 0.441  | 0.288  
   LightGBM            | 0.847  | 0.448  | 0.293
 - Used 5-fold cross-validation to ensure reliable results
-- XGBoost won because house prices have non-linear 
-  relationships that tree-based models capture better
+  
+- XGBoost won because house prices have non-linear relationships that tree-based models capture better
 
 KEY FINDING — Feature Importance:
-  #1 income_per_room   31.54% ← engineered feature!
+  #1 income_per_room   31.54% 
   #2 MedInc            19.72%
-  #3 rooms_per_person  15.78% ← engineered feature!
-  The engineered features outperformed all original features,
-  proving that domain knowledge adds significant value.
+  #3 rooms_per_person  15.78% 
+  The engineered features outperformed all original features,proving that domain knowledge adds significant value.
 
 PHASE 4: Web Application
 - Built with Streamlit + Plotly
