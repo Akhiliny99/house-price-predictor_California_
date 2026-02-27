@@ -314,6 +314,6 @@ st.markdown("---")
 st.markdown("""
 <div style='text-align:center; color:#334155; font-size:0.8rem; padding: 1rem 0'>
     Built with ❤️ · XGBoost + Streamlit · California Housing Dataset ·
-    R²=0.852 · <a href='https://github.com' style='color:#4ade80'>View on GitHub</a>
+    R²=0.852 · <a href='https://github.com/Akhiliny99/house-price-predictor_California_' style='color:#4ade80'>View on GitHub</a>
 </div>
 """, unsafe_allow_html=True)
