@@ -2,6 +2,7 @@
 California House Price Predictor
 
 OVERVIEW
+
 A complete end-to-end machine learning project that predicts 
 residential house prices in California. The system takes 
 property characteristics as input and outputs an estimated 
@@ -9,6 +10,7 @@ price with visual explanations — mimicking how a real
 automated valuation model (AVM) works in the property industry.
 
 WHERE I GOT THE DATA
+
 Dataset: California Housing Dataset
 Source:  Built into scikit-learn library (originally from 
          StatLib repository, based on 1990 US Census data)
