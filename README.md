@@ -65,44 +65,63 @@ PHASE 3: Model Training & Evaluation
 
 - Trained and compared 6 machine learning models:
   Model               | R²     | RMSE   | MAE
+  
   Linear Regression   | 0.606  | 0.718  | 0.528
+  
   Ridge Regression    | 0.607  | 0.717  | 0.527
+  
   Lasso Regression    | 0.605  | 0.719  | 0.529
+  
   Random Forest       | 0.805  | 0.503  | 0.329
-  XGBoost             | 0.852  | 0.441  | 0.288  
+  
+  XGBoost             | 0.852  | 0.441  | 0.288
+  
   LightGBM            | 0.847  | 0.448  | 0.293
+  
 - Used 5-fold cross-validation to ensure reliable results
   
 - XGBoost won because house prices have non-linear relationships that tree-based models capture better
 
 KEY FINDING — Feature Importance:
   #1 income_per_room   31.54% 
+  
   #2 MedInc            19.72%
+  
   #3 rooms_per_person  15.78% 
   The engineered features outperformed all original features,proving that domain knowledge adds significant value.
 
 PHASE 4: Web Application
-- Built with Streamlit + Plotly
+- Built with Streamlit, Plotly
+  
 - Interactive sliders for all 12 input features
+  
 - Real-time price prediction with confidence gauge
+  
 - Feature importance bar chart
+  
 - Smart insights (e.g. "This area has above-average income")
+  
 - Deployed to Streamlit Cloud 
 
 RESULTS
 
 Best Model:    XGBoost
+
 R² Score:      0.852 (model explains 85.2% of price variance)
+
 RMSE:          $44,100 average prediction error
+
 MAE:           $28,800 median prediction error
+
 Training Size: 16,512 samples
+
 Test Size:     4,128 samples
 
 TECH STACK
 
 Language:   Python 
-Libraries:  scikit-learn, XGBoost, LightGBM, pandas, 
-            numpy, matplotlib, seaborn, plotly, streamlit
+Libraries:  scikit-learn, XGBoost, LightGBM, pandas, numpy, matplotlib, seaborn, plotly, streamlit
+
 Deployment: Streamlit Cloud
 
 LIVE DEMO: https://house-price-predictorcalifornia-hjggnxkk6juzla9ae5hbwz.streamlit.app/
