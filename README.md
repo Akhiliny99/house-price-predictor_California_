@@ -42,16 +42,16 @@ PHASE 1: Exploratory Data Analysis (EDA)
 
 PHASE 2: Feature Engineering
 - Created 4 new features from domain knowledge:
-  → rooms_per_person   = AveRooms / AveOccup
+   rooms_per_person   = AveRooms / AveOccup
     (actual living space quality, not just room count)
   
-  → bedroom_ratio      = AveBedrms / AveRooms
+   bedroom_ratio      = AveBedrms / AveRooms
     (proportion of rooms that are bedrooms)
   
-  → income_per_room    = MedInc / AveRooms
+   income_per_room    = MedInc / AveRooms
     (wealth relative to property size)
   
-  → dist_min_city      = minimum distance to SF or LA
+   dist_min_city      = minimum distance to SF or LA
     (proximity to major economic centres)
   
 - Applied Winsorization at 99th percentile to cap outliers (preserves data rather than deleting rows)
@@ -83,11 +83,13 @@ PHASE 3: Model Training & Evaluation
 - XGBoost won because house prices have non-linear relationships that tree-based models capture better
 
 KEY FINDING — Feature Importance:
-  #1 income_per_room   31.54% 
+
+  1 income_per_room   31.54% 
   
-  #2 MedInc            19.72%
+  2 MedInc            19.72%
   
-  #3 rooms_per_person  15.78% 
+  3 rooms_per_person  15.78% 
+  
   The engineered features outperformed all original features,proving that domain knowledge adds significant value.
 
 PHASE 4: Web Application
